@@ -1,0 +1,41 @@
+#define IR_OUT  P2_6        // IR sensor output pin connected to Port 2.6
+#define BUZZER  P2_0        // Buzzer connected to Port 2.0
+
+void setup() {
+  pinMode(IR_OUT, INPUT);    // Set P2.6 as INPUT to read IR sensor output
+  pinMode(BUZZER, OUTPUT);   // Set P2.0 as OUTPUT to control the buzzer
+
+  Serial.begin(9600);        
+  Serial.println("IR Sensor Interfacing Started");  
+
+}
+
+void loop() {
+
+  if (digitalRead(IR_OUT) == 1)      
+  {
+    digitalWrite(BUZZER, HIGH);      
+    Serial.println("Object Detected"); 
+  }
+  else                               
+  {
+    digitalWrite(BUZZER, LOW);       
+  }
+
+  delay(100);                        
+}
+
+
+/* --------------------------------------------------------------
+   HARDWARE CONNECTIONS (MSP430 LaunchPad):
+   --------------------------------------------------------------
+   IR SENSOR MODULE:
+   - VCC  →  +5V or +3.3V (depending on sensor)
+   - GND  →  GND (common ground)
+   - OUT  →  P2.6 (IR_OUT pin)
+
+   BUZZER:
+   - Positive (+) terminal → P2.0 (BUZZER pin)
+   - Negative (–) terminal → GND
+
+---------------------------------------------------------------- */

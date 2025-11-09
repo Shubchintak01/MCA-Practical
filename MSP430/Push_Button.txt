@@ -1,0 +1,42 @@
+#define LED P2_1     // LED connected to Port 2.1
+#define SW  P2_3     // Switch connected to Port 2.3
+
+unsigned char Status;   
+
+void setup() {
+
+  pinMode(LED, OUTPUT);    // Configure P2.1 as OUTPUT to drive the LED
+  pinMode(SW, INPUT);      // Configure P2.3 as INPUT to read switch status
+  
+
+}
+
+void loop() {
+  Status = digitalRead(SW);  
+
+  if (Status == 0)            // If switch is pressed (LOW = pressed)
+  {
+    digitalWrite(LED, HIGH);  
+  }
+  else                        // If switch is released (HIGH)
+  {
+    digitalWrite(LED, LOW);   
+  }
+
+  delay(50);                 
+}
+
+
+
+/* --------------------------------------------------------------
+   HARDWARE CONNECTIONS (MSP430 LaunchPad):
+   --------------------------------------------------------------
+   LED:
+   - Anode (+) → P2.1 (through 220Ω resistor)
+   - Cathode (–) → GND
+
+   SWITCH:
+   - One terminal → P2.3
+   - Other terminal → GND
+   - (If using internal pull-up, enable INPUT_PULLUP mode)
+---------------------------------------------------------------- */

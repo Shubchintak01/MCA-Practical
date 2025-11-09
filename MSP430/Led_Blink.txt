@@ -1,0 +1,23 @@
+void setup() {
+  pinMode(P1_6, OUTPUT);     // Configure pin P1.6 as an output pin
+                             // This pin is usually connected to the on-board LED
+}
+
+void loop() {
+
+  digitalWrite(P1_6, HIGH);  // Set pin P1.6 HIGH → LED ON
+                             // For MSP430 LaunchPad, LED is connected to P1.6
+  delay(500);               
+
+  digitalWrite(P1_6, LOW);  
+  delay(500);               
+}
+
+/* --------------------------------------------------------------
+   HARDWARE CONNECTIONS (MSP430 LaunchPad):
+   --------------------------------------------------------------
+   - On-board LED → Connected to P1.6 (usually labeled as GREEN LED)
+   - P1.6 pin     → Connected to LED through current-limiting resistor
+   - GND          → Common ground
+
+---------------------------------------------------------------- */
