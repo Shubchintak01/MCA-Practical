@@ -8,3 +8,5 @@ Fellows! Before using this code in the exam:
 May your code generate HEX File on the first try (for once)! 😅
 
 https://chatgpt.com/share/6912296d-7808-800b-8a12-4eb0c8575598
+
+https://unique-store-d0e.notion.site/MCA-29f9a5171d2a80029ccee6b4faee861f
